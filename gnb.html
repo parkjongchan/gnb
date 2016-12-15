@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+ <style type="text/css" title="">
+/* common */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, textarea, input {
+   margin:0; padding:0; border:0; font-size:16px; color:inherit;  vertical-align:baseline;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+   line-height: 1;
+}
+ol, ul {
+   list-style: none;
+}
+blockquote, q {
+   quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+   content: '';
+   content: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+li img {vertical-align:top;}
+select, .input {vertical-align:middle;}
+img, fieldset {border:0;}
+fieldset legend {display:none;} 
+ </style>
+ <style type="text/css" title="">
+.header_wrap {position:relative; width:100%; height:112px; background:#fff; z-index:100000000;}
+.header_wrap .header {position:relative; width:1180px; height:112px; /*background:url('./images/common/test_gnb.jpg') no-repeat 10px top;*/ padding:0; margin:0 auto;}
+.header_wrap h1.logo {position:absolute; top:60px; left:10px; z-index:100; border:1px}
+
+.util {height:64px;}
+.util ul {float:right; padding-top:12px;}
+.util li {float:left; font-family:'Nanum Barun Gothic'; font-size:11px; padding-left:25px;}
+.util li a {color:#898989;}
+.util li a.grade_search {color:#007dc6;}
+
+.gnb {position:relative; float:left; padding-left:180px;}
+.gnb li {position:relative; float:left; font-size:16px; line-height:16px; padding:0 40px 0 40px; /*margin:0 80px 0 0;*/}
+.gnb li a.dp1 {display:inline-block; height:48px; color:#1e1e1e; letter-spacing:-0.5px; text-decoration:none;}
+.gnb li.on a.dp1 {height:48px; color:#0168c6; /*border-bottom:2px solid #79a8cc;*/ background:url('./images/common/bg_gnb_line.gif') repeat-x left 27px;}
+.gnb ul.dp2 {position:absolute; top:48px; left:0; width:100%; min-height:260px; padding:26px 0 0 0; z-index:1000000; display:none;overflow:hidden}
+.gnb ul.dp2 li {clear:both; width:100%; margin:0;}
+.gnb ul.dp2 li a.dp2 {display:inline-block; font-family:'Nanum Barun Gothic'; font-size:14px; line-height:33px; text-decoration:none;}
+.gnb ul.dp2 li a.dp2:hover {color:#0168c6; text-decoration:underline;}
+.gnb li.last ul.dp2 li {}
+
+.opa {position:fixed; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.7; filter:alpha(opacity=70); display:none; z-index:1000;}
+.bg_2dp {position:absolute; top:112px; left:0; width:100%; height:285px; border-bottom:1px solid #d5d5d5; padding:0 0 0 0; z-index:100000; display:none;background:#fff url('./images/common/bg-gnb-line.jpg') repeat-x}
+
+.sns {float:right;}
+.sns li.sns01 {float:left; padding-top:2px;}
+.sns li.sns02 {float:left; padding-left:28px;}
+ </style>
+
+
+
+<!-- header -->
+<div class="header_wrap">
+	<div class="header">
+		<!-- util -->
+		<div class="util">
+			<ul>
+				<li><a href="" class="grade_search" target="_blank">로그인</a></li>
+				<li><a href="" target="_blank">정보수정</a></li>
+				<li><a href="" target="_blank">마이페이지</a></li>
+			</ul>
+		</div>
+		<!-- //util -->
+		<h1 class="logo"><a href=""><img src="./images/common/logo.gif" alt="" /></a></h1>
+		<!-- gnb -->
+		<div id="gnb" class="gnb">
+			<ul>
+				<li>
+					<a href="" class="dp1">타이틀</a>
+					<ul class="dp2">
+						<li><a href="" class="dp2">그룹개요</a></li>
+						<li><a href="" class="dp2">CEO인사말</a></li>
+						<li><a href="" class="dp2">미션 & 비전</a></li>
+						<li><a href="" class="dp2">그룹연혁</a></li>
+						<li><a href="" class="dp2">CI/브랜드 소개</a></li>
+						<li><a href="" class="dp2">사회공헌</a></li>
+						<li><a href="" class="dp2">찾아오시는 길</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="" class="dp1">사업분야</a>
+					<ul class="dp2">
+						<li><a href="" class="dp2">축산사업부문</a></li>
+						<li><a href="" class="dp2">농산사업부문</a></li>
+						<li><a href="" class="dp2">수산사업부문</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="" class="dp1">제품정보</a>
+					<ul class="dp2">
+						<li><a href="" class="dp2">제품소개</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="" class="dp1">홍보센터</a>
+					<ul class="dp2">
+						<li><a href="" class="dp2">조인소식</a></li>
+						<li><a href="" class="dp2">언론/보도자료</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://www.joinbio.co.kr/cs/cscenter01.html" class="dp1">고객센터</a>
+					<ul class="dp2">
+						<li><a href="" class="dp2">고객문의</a></li>
+						<li><a href="" class="dp2">등급판정서</a></li>
+						<li><a href="" class="dp2">인증서</a></li>
+						<li><a href="" class="dp2" target="_blank">고객발주 서비스</a></li>
+					</ul>
+				</li>
+				<li class="last">
+					<a href="" class="dp1">인재채용</a>
+					<ul class="dp2">
+						<li><a href="" class="dp2">인재상</a></li>
+						<li><a href="" class="dp2">조인피플</a></li>
+						<li><a href="" class="dp2">인재육성</a></li>
+						<li><a href="" class="dp2">복리후생</a></li>
+						<li><a href="" class="dp2">채용공고</a></li>
+						<li><a href="" class="dp2">채용문의</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- //gnb -->
+		<!-- sns -->
+		<div class="sns">
+			<ul>
+				<li class="sns01"><a href="" target="_blank"><img src="./images/common/btn_blog_off.gif" alt="블로그" /></a></li>
+				<li class="sns02"><a href="" target="_blank"><img src="./images/common/btn_kakao_off.gif" alt="카카오스토리" /></a></li>
+			</ul>
+		</div>
+		<!-- //sns -->
+	</div>
+</div>
+<div class="opa"></div> <!-- GNB dimde -->
+<div class="bg_2dp"></div> <!-- GNB 2depth 배경 -->
+
+<!-- //header -->
+
+
+ </body>
+ <script type="text/javascript">
+$(function () {
+/*GNB 
+make : pjc
+*/
+	function hGnb(obj) {
+		this.gnb = null;
+		this.gnbEl = null;
+		this.gnbList = null;
+		this.deptList = null;
+		this.opaBk = '.opa';
+		this.gnbSl = '.bg_2dp';
+		this.select = null;
+
+		this.init(obj);
+		this.eventHandle();
+
+	}
+	hGnb.prototype.init = function (arg) {
+		this.gnb = $(arg);
+		this.gnbEl = this.gnb.children();
+		this.gnbList = this.gnb.children().children();
+		this.deptTwo = this.gnb.find('ul.dp2')
+
+	}
+	hGnb.prototype.eventHandle = function (e) {
+		ojbthis1 = this;
+
+		/*1depts parent over*/
+		ojbthis1.gnbEl.hover(
+			function () {
+				ojbthis1.gnbShow();
+			},
+			function () {
+				ojbthis1.gnbHide();
+			});
+		/*1depts selectro check*/
+		ojbthis1.gnbList.mouseover(function () {
+			ojbthis1.selectorPa(this);
+		});
+		ojbthis1.gnbList.mouseout(function () {
+			ojbthis1.selectorPa(this);
+		});
+
+		/*2depts over*/
+		ojbthis1.deptTwo.mouseover(function () {
+
+			ojbthis1.selector(this);
+		});
+		ojbthis1.deptTwo.mouseout(function () {
+			ojbthis1.selector(this);
+		});
+
+		/*kyeboard*/
+		ojbthis1.gnbEl.keyup(function (event) {
+
+			ojbthis1.gnbShow();
+
+		})
+		$('.sns').keyup(function (event) {
+
+			ojbthis1.gnbHide();
+
+		});
+
+	}
+	hGnb.prototype.selectorPa = function (arg) {
+
+		$(ojbthis1.gnbList).removeClass("on");
+		$(arg).addClass("on");
+
+	}
+	hGnb.prototype.selector = function (arg) {
+
+		$(ojbthis1.gnbList).removeClass("on");
+		$(arg).parent().addClass("on");
+
+	}
+	/*show gnb*/
+	hGnb.prototype.gnbShow = function (arg) {
+
+		$(this.gnbSl).slideDown(300);
+		$(this.deptList).delay(200).fadeIn();
+		$(this.opaBk).fadeIn(100);
+	}
+	/* hide gnb*/
+	hGnb.prototype.gnbHide = function (arg) {
+		$(this.gnbSl).stop().slideUp(100);
+		$(this.deptList).stop().hide().finish();
+		$(this.opaBk).stop().fadeOut();
+
+	}
+
+	var hgnb = new hGnb($('.gnb'));
+})
+ </script>
+ 
+</html>
