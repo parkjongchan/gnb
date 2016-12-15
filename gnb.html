@@ -97,7 +97,7 @@ fieldset legend {display:none;}
 			</ul>
 		</div>
 		<!-- //util -->
-		<h1 class="logo"><a href=""><img src="./images/common/logo.gif" alt="" /></a></h1>
+		<h1 class="logo"><a href=""><img src="" alt="" /></a></h1>
 		<!-- gnb -->
 		<div id="gnb" class="gnb">
 			<ul>
@@ -152,6 +152,8 @@ fieldset legend {display:none;}
 						<li><a href="" class="dp2">복리후생</a></li>
 						<li><a href="" class="dp2">채용공고</a></li>
 						<li><a href="" class="dp2">채용문의</a></li>
+						<li><a href="" class="dp2">채용문의</a></li>
+						<li><a href="" class="dp2">채용문의</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -160,8 +162,8 @@ fieldset legend {display:none;}
 		<!-- sns -->
 		<div class="sns">
 			<ul>
-				<li class="sns01"><a href="" target="_blank"><img src="./images/common/btn_blog_off.gif" alt="블로그" /></a></li>
-				<li class="sns02"><a href="" target="_blank"><img src="./images/common/btn_kakao_off.gif" alt="카카오스토리" /></a></li>
+				<li class="sns01"><a href="" target="_blank"><img src="" alt="" /></a></li>
+				<li class="sns02"><a href="" target="_blank"><img src="" alt="" /></a></li>
 			</ul>
 		</div>
 		<!-- //sns -->
@@ -197,12 +199,21 @@ make : pjc
 		this.gnbEl = this.gnb.children();
 		this.gnbList = this.gnb.children().children();
 		this.deptTwo = this.gnb.find('ul.dp2')
-
+		this.twoDeptsLeng = this.deptTwo.length -1;
+		this.twoDeptLastLeng = $(this.deptTwo).eq(this.twoDeptsLeng).find('li').length - 1;
+		this.LstEl = this.deptTwo.eq(this.twoDeptsLeng).find('li').eq(this.twoDeptLastLeng);
 	}
 	hGnb.prototype.eventHandle = function (e) {
 		ojbthis1 = this;
-
-		/*1depts parent over*/
+	
+		/*1depts parent over keyboard*/
+		ojbthis1.gnbEl.focusin(function(){
+			ojbthis1.gnbShow();
+		});
+		ojbthis1.LstEl.focusout(function() {
+		  ojbthis1.gnbHide();
+		});
+		/* 1depts parent over mouse */
 		ojbthis1.gnbEl.hover(
 			function () {
 				ojbthis1.gnbShow();
@@ -228,7 +239,7 @@ make : pjc
 		});
 
 		/*kyeboard*/
-		ojbthis1.gnbEl.keyup(function (event) {
+		/*ojbthis1.gnbEl.keyup(function (event) {
 
 			ojbthis1.gnbShow();
 
@@ -237,7 +248,7 @@ make : pjc
 
 			ojbthis1.gnbHide();
 
-		});
+		});*/
 
 	}
 	hGnb.prototype.selectorPa = function (arg) {
@@ -255,14 +266,14 @@ make : pjc
 	/*show gnb*/
 	hGnb.prototype.gnbShow = function (arg) {
 
-		$(this.gnbSl).slideDown(300);
-		$(this.deptList).delay(200).fadeIn();
+		$(this.gnbSl).show();
+		$(this.deptTwo).show();
 		$(this.opaBk).fadeIn(100);
 	}
 	/* hide gnb*/
 	hGnb.prototype.gnbHide = function (arg) {
-		$(this.gnbSl).stop().slideUp(100);
-		$(this.deptList).stop().hide().finish();
+		$(this.gnbSl).hide();
+		$(this.deptTwo).hide();
 		$(this.opaBk).stop().fadeOut();
 
 	}
